@@ -298,10 +298,16 @@ export default function Contact() {
                     }`}
                   >
                     <option value="" disabled>Select a service</option>
-                    <option value="Event Planning">Event Planning</option>
-                    <option value="Brand Promotion">Brand Promotion</option>
-                    <option value="Team Coordination">Team Coordination</option>
-                    <option value="LinkedIn Optimization">LinkedIn Optimization</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Social Media Management">Social Media Management</option>
+                    <option value="Branding & Brand Development">Branding &amp; Brand Development</option>
+                    <option value="Website Design & Development">Website Design &amp; Development</option>
+                    <option value="Content Creation & Graphic Design">Content Creation &amp; Graphic Design</option>
+                    <option value="Event Management">Event Management</option>
+                    <option value="Corporate Event Planning">Corporate Event Planning</option>
+                    <option value="Project Management">Project Management</option>
+                    <option value="Business Consulting">Business Consulting</option>
+                    <option value="Lead Generation & Growth Strategy">Lead Generation &amp; Growth Strategy</option>
                     <option value="Other">Other</option>
                   </select>
                   {errors.service && <span className="text-[10px] text-red-400 pl-0.5">{errors.service}</span>}
