@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
 
+const WhatsAppIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </svg>
+);
+
 const LinkedInIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -31,7 +37,7 @@ const InstagramIcon = ({ className }) => (
 );
 
 export default function Contact() {
-  const [formState, setFormState] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formState, setFormState] = useState({ name: '', email: '', phone: '', service: '', message: '' });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -44,7 +50,12 @@ export default function Contact() {
     } else if (!/\S+@\S+\.\S+/.test(formState.email)) {
       newErrors.email = 'Invalid email address syntax.';
     }
-    if (!formState.subject.trim()) newErrors.subject = 'Subject is required.';
+    if (!formState.phone.trim()) {
+      newErrors.phone = 'Phone Number is required.';
+    } else if (!/^\+?[0-9\s\-()]{7,20}$/.test(formState.phone)) {
+      newErrors.phone = 'Invalid phone number format.';
+    }
+    if (!formState.service.trim()) newErrors.service = 'Service is required.';
     if (!formState.message.trim()) newErrors.message = 'Message content is required.';
     
     setErrors(newErrors);
@@ -65,17 +76,24 @@ export default function Contact() {
     if (validate()) {
       setIsSubmitting(true);
       
-      // Simulate API submit delay
+      const text = `New Contact Request\n\nName: ${formState.name}\nEmail: ${formState.email}\nPhone: ${formState.phone}\nService: ${formState.service}\n\nMessage:\n${formState.message}`;
+      
+      const encodedText = encodeURIComponent(text);
+      const whatsappNumber = '94705666420';
+      const url = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+      // Show submitting state briefly for better UX, then open WhatsApp
       setTimeout(() => {
+        window.open(url, '_blank');
         setIsSubmitting(false);
         setSubmitSuccess(true);
-        setFormState({ name: '', email: '', subject: '', message: '' });
+        setFormState({ name: '', email: '', phone: '', service: '', message: '' });
         
         // Reset success state after 4 seconds
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 4000);
-      }, 1500);
+      }, 1000);
     }
   };
 
@@ -95,11 +113,11 @@ export default function Contact() {
             <span>Connect With Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Get in <span className="text-brand-orange">Touch</span>
+            Get in <span className="text-[#25D366]">Touch</span>
           </h2>
-          <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
+          <div className="h-1.5 w-16 bg-[#25D366] mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
-            Ready to turn your spark of inspiration into a commercial success? Send us a message or contact us directly.
+            Ready to turn your spark of inspiration into a commercial success? Send us a message via WhatsApp directly.
           </p>
         </div>
 
@@ -111,7 +129,7 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold text-white mb-4">Let's start your journey</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Have an event to plan, a brand to promote, a team to coordinate, or a personal LinkedIn profile to optimize? Choose your preferred channel and let's coordinate.
+                Have an event to plan, a brand to promote, a team to coordinate, or a personal LinkedIn profile to optimize? Fill out the form and reach us instantly on WhatsApp.
               </p>
 
               {/* Direct Link blocks */}
@@ -121,14 +139,14 @@ export default function Contact() {
                   href="https://wa.me/94705666420?text=Hi%20SparkPlow,%20I%20would%20like%20to%20know%20more%20about%20your%20services!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl glass-panel border-brand-navy-border/40 hover:border-brand-orange/40 transition duration-300 group"
+                  className="flex items-center gap-4 p-4 rounded-xl glass-panel border-brand-navy-border/40 hover:border-[#25D366]/40 transition duration-300 group"
                 >
-                  <div className="p-3 rounded-lg bg-green-500/10 text-green-400 group-hover:scale-110 transition duration-200">
-                    <MessageCircle className="h-6 w-6" />
+                  <div className="p-3 rounded-lg bg-[#25D366]/10 text-[#25D366] group-hover:scale-110 transition duration-200">
+                    <WhatsAppIcon className="h-6 w-6" />
                   </div>
                   <div>
-                    <div className="text-xs font-semibold text-slate-400">Quick WhatsApp Chat</div>
-                    <div className="text-sm font-bold text-white group-hover:text-brand-orange transition">+94 70 566 6420</div>
+                    <div className="text-xs font-semibold text-slate-400">Direct WhatsApp</div>
+                    <div className="text-sm font-bold text-white group-hover:text-[#25D366] transition">+94 70 566 6420</div>
                   </div>
                 </a>
 
@@ -207,9 +225,9 @@ export default function Contact() {
                   <div className="p-4 rounded-full bg-green-500/10 text-green-400 mb-4 border border-green-500/20">
                     <CheckCircle2 className="h-10 w-10 animate-bounce" />
                   </div>
-                  <h4 className="text-xl font-bold text-white mb-2">Message Sent!</h4>
+                  <h4 className="text-xl font-bold text-white mb-2">Message Prepared!</h4>
                   <p className="text-xs text-slate-300 max-w-xs leading-relaxed">
-                    Thank you for contacting SparkPlow. Our coordination team will review your inquiry and reach out within 24 hours.
+                    If WhatsApp didn't open automatically, please check your popup blocker. Thank you for contacting SparkPlow!
                   </p>
                 </div>
               )}
@@ -226,7 +244,7 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleInputChange}
                     placeholder="Enter name"
-                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 ${
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 ${
                       errors.name ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   />
@@ -243,29 +261,51 @@ export default function Contact() {
                     value={formState.email}
                     onChange={handleInputChange}
                     placeholder="Enter email"
-                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 ${
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 ${
                       errors.email ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   />
                   {errors.email && <span className="text-[10px] text-red-400 pl-0.5">{errors.email}</span>}
                 </div>
-              </div>
 
-              {/* Subject */}
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="subject" className="text-xs font-semibold text-slate-300 pl-0.5">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formState.subject}
-                  onChange={handleInputChange}
-                  placeholder="Marketing, Event Planning, Coordinating..."
-                  className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 ${
-                    errors.subject ? 'border-red-500/80' : 'border-brand-navy-border/70'
-                  }`}
-                />
-                {errors.subject && <span className="text-[10px] text-red-400 pl-0.5">{errors.subject}</span>}
+                {/* Phone Number */}
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="phone" className="text-xs font-semibold text-slate-300 pl-0.5">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formState.phone}
+                    onChange={handleInputChange}
+                    placeholder="Enter phone number"
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 ${
+                      errors.phone ? 'border-red-500/80' : 'border-brand-navy-border/70'
+                    }`}
+                  />
+                  {errors.phone && <span className="text-[10px] text-red-400 pl-0.5">{errors.phone}</span>}
+                </div>
+
+                {/* Service Required */}
+                <div className="flex flex-col gap-1.5">
+                  <label htmlFor="service" className="text-xs font-semibold text-slate-300 pl-0.5">Service Required</label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formState.service}
+                    onChange={handleInputChange}
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 appearance-none ${
+                      errors.service ? 'border-red-500/80' : 'border-brand-navy-border/70'
+                    }`}
+                  >
+                    <option value="" disabled>Select a service</option>
+                    <option value="Event Planning">Event Planning</option>
+                    <option value="Brand Promotion">Brand Promotion</option>
+                    <option value="Team Coordination">Team Coordination</option>
+                    <option value="LinkedIn Optimization">LinkedIn Optimization</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.service && <span className="text-[10px] text-red-400 pl-0.5">{errors.service}</span>}
+                </div>
               </div>
 
               {/* Message */}
@@ -278,7 +318,7 @@ export default function Contact() {
                   value={formState.message}
                   onChange={handleInputChange}
                   placeholder="Describe your project, timeline, or objectives..."
-                  className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 resize-none ${
+                  className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 resize-none ${
                     errors.message ? 'border-red-500/80' : 'border-brand-navy-border/70'
                   }`}
                 />
@@ -289,17 +329,17 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-2 py-3.5 rounded-xl font-bold bg-brand-orange hover:bg-brand-orange-dark text-white flex items-center justify-center gap-2.5 transition duration-300 glow-orange disabled:opacity-50"
+                className="w-full mt-2 py-3.5 rounded-xl font-bold bg-[#25D366] hover:bg-[#1DA851] text-white flex items-center justify-center gap-2.5 transition duration-300 shadow-[0_0_15px_rgba(37,211,102,0.3)] hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
                     <span className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    <span>Submitting Message...</span>
+                    <span>Redirecting to WhatsApp...</span>
                   </>
                 ) : (
                   <>
-                    <Send className="h-4.5 w-4.5" />
-                    <span>Send Message</span>
+                    <WhatsAppIcon className="h-5 w-5" />
+                    <span>Send via WhatsApp</span>
                   </>
                 )}
               </button>
