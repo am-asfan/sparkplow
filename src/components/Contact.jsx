@@ -113,9 +113,9 @@ export default function Contact() {
             <span>Connect With Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Get in <span className="text-[#25D366]">Touch</span>
+            Get in <span className="text-brand-orange">Touch</span>
           </h2>
-          <div className="h-1.5 w-16 bg-[#25D366] mx-auto rounded-full mb-6" />
+          <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
             Ready to turn your spark of inspiration into a commercial success? Send us a message via WhatsApp directly.
           </p>
@@ -139,14 +139,14 @@ export default function Contact() {
                   href="https://wa.me/94705666420?text=Hi%20SparkPlow,%20I%20would%20like%20to%20know%20more%20about%20your%20services!"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-xl glass-panel border-brand-navy-border/40 hover:border-[#25D366]/40 transition duration-300 group"
+                  className="flex items-center gap-4 p-4 rounded-xl glass-panel border-brand-navy-border/40 hover:border-brand-orange/40 transition duration-300 group"
                 >
-                  <div className="p-3 rounded-lg bg-[#25D366]/10 text-[#25D366] group-hover:scale-110 transition duration-200">
+                  <div className="p-3 rounded-lg bg-brand-orange/10 text-brand-orange group-hover:scale-110 transition duration-200">
                     <WhatsAppIcon className="h-6 w-6" />
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-slate-400">Direct WhatsApp</div>
-                    <div className="text-sm font-bold text-white group-hover:text-[#25D366] transition">+94 70 566 6420</div>
+                    <div className="text-sm font-bold text-white group-hover:text-brand-orange transition">+94 70 566 6420</div>
                   </div>
                 </a>
 
@@ -244,7 +244,7 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleInputChange}
                     placeholder="Enter name"
-                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 ${
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 ${
                       errors.name ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   />
@@ -261,7 +261,7 @@ export default function Contact() {
                     value={formState.email}
                     onChange={handleInputChange}
                     placeholder="Enter email"
-                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 ${
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 ${
                       errors.email ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   />
@@ -278,7 +278,7 @@ export default function Contact() {
                     value={formState.phone}
                     onChange={handleInputChange}
                     placeholder="Enter phone number"
-                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 ${
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 ${
                       errors.phone ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   />
@@ -293,7 +293,7 @@ export default function Contact() {
                     name="service"
                     value={formState.service}
                     onChange={handleInputChange}
-                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 appearance-none ${
+                    className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 appearance-none ${
                       errors.service ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   >
@@ -318,7 +318,7 @@ export default function Contact() {
                   value={formState.message}
                   onChange={handleInputChange}
                   placeholder="Describe your project, timeline, or objectives..."
-                  className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-[#25D366] transition duration-200 resize-none ${
+                  className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 resize-none ${
                     errors.message ? 'border-red-500/80' : 'border-brand-navy-border/70'
                   }`}
                 />
@@ -329,7 +329,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-2 py-3.5 rounded-xl font-bold bg-[#25D366] hover:bg-[#1DA851] text-white flex items-center justify-center gap-2.5 transition duration-300 shadow-[0_0_15px_rgba(37,211,102,0.3)] hover:shadow-[0_0_20px_rgba(37,211,102,0.5)] disabled:opacity-50"
+                className="w-full mt-2 py-3.5 rounded-xl font-bold bg-brand-orange hover:bg-brand-orange-dark text-white flex items-center justify-center gap-2.5 transition duration-300 glow-orange disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
