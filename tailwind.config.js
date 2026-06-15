@@ -30,6 +30,9 @@ export default {
         "float-slow": "float 6s ease-in-out infinite",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "glow-pulse": "glow 3s ease-in-out infinite alternate",
+        "orbit": "orbit 20s linear infinite",
+        "orbit-reverse": "orbit-reverse 25s linear infinite",
+        "orbit-fast": "orbit 15s linear infinite",
       },
       keyframes: {
         float: {
@@ -39,6 +42,14 @@ export default {
         glow: {
           "0%": { boxShadow: "0 0 15px rgba(255, 87, 34, 0.2)" },
           "100%": { boxShadow: "0 0 35px rgba(255, 87, 34, 0.6)" },
+        },
+        orbit: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "orbit-reverse": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
         },
       },
     },

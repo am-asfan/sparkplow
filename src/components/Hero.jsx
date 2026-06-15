@@ -1,5 +1,61 @@
 import React from 'react';
-import { Sparkles, ArrowRight, Activity, Calendar, Award, CheckCircle } from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
+import Logo from './Logo';
+
+const InstagramIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const FacebookIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
+
+const LinkedinIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+);
+
+const YoutubeIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+  </svg>
+);
+
+const MediumIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42M24 12c0 3.11-.53 5.62-1.18 5.62-.66 0-1.18-2.51-1.18-5.62 0-3.11.53-5.62 1.18-5.62.66 0 1.18 2.51 1.18 5.62"/>
+  </svg>
+);
+
+const GoogleAdsIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M21.35 11.1h-9.17v2.73h5.24c-.23 1.16-.88 2.15-1.84 2.8v2.3h2.98c1.74-1.6 2.74-3.96 2.74-6.64 0-.41-.04-.81-.11-1.19z" />
+    <path d="M12.18 21.6c2.58 0 4.74-.85 6.32-2.31l-2.98-2.3c-.85.57-1.95.91-3.34.91-2.57 0-4.74-1.74-5.51-4.08H3.59v2.38c1.58 3.14 4.8 5.4 8.59 5.4z" />
+    <path d="M6.67 13.82c-.19-.57-.3-1.18-.3-1.82s.11-1.25.3-1.82V7.8H3.59C2.93 9.1 2.56 10.51 2.56 12s.37 2.9 1.03 4.2l3.08-2.38z" />
+    <path d="M12.18 5.2c1.4 0 2.66.48 3.65 1.42l2.74-2.74C16.92 2.33 14.76 1.42 12.18 1.42 8.39 1.42 5.17 3.68 3.59 6.82l3.08 2.38c.77-2.34 2.94-4 5.51-4z" />
+  </svg>
+);
+
+const TikTokIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+  </svg>
+);
+
+const MetaIcon = ({ className }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M17.47 5.14c-1.78 0-3.32.88-4.32 2.3l-1.15 1.6-1.15-1.6c-1-1.42-2.54-2.3-4.32-2.3-3.23 0-5.83 2.6-5.83 5.83 0 3.22 2.6 5.82 5.83 5.82 1.78 0 3.32-.88 4.32-2.3l1.15-1.6 1.15 1.6c1 1.42 2.54 2.3 4.32 2.3 3.23 0 5.83-2.6 5.83-5.83 0-3.22-2.6-5.82-5.83-5.82zm0 8.9c-.93 0-1.75-.46-2.28-1.2L12 8.44l-3.19 4.4c-.53.74-1.35 1.2-2.28 1.2-1.68 0-3.03-1.35-3.03-3.03 0-1.68 1.35-3.03 3.03-3.03.93 0 1.75.46 2.28 1.2L12 13.56l3.19-4.4c.53-.74 1.35-1.2 2.28-1.2 1.68 0 3.03 1.35 3.03 3.03 0 1.68-1.35 3.03-3.03 3.03z"/>
+  </svg>
+);
 
 export default function Hero() {
   const handleScrollTo = (targetId) => {
@@ -66,145 +122,86 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Showcase Column (SaaS Mock Dashboard) */}
-          <div className="lg:col-span-6 relative flex justify-center w-full">
-            {/* Soft backdrop glow behind mock */}
-            <div className="absolute inset-0 bg-brand-orange/10 blur-[80px] rounded-full scale-75" />
+          {/* Right Showcase Column (Animated Social Orbit) */}
+          <div className="lg:col-span-6 relative flex justify-center items-center w-full min-h-[400px] lg:min-h-[500px]">
+            {/* Soft backdrop glow */}
+            <div className="absolute inset-0 bg-brand-orange/20 blur-[100px] rounded-full scale-75 animate-pulse-slow" />
 
-            {/* Dashboard Container (Glassmorphic Mockup) */}
-            <div className="w-full max-w-[520px] rounded-2xl glass-panel border-brand-navy-border/60 shadow-2xl overflow-hidden animate-float-slow select-none">
+            {/* Orbit Container */}
+            <div className="relative w-full max-w-[400px] aspect-square flex items-center justify-center">
               
-              {/* Window Header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-brand-navy-deep/90 border-b border-brand-navy-border/40">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="text-xs font-semibold tracking-wider text-slate-400">SparkPlow Hub</div>
-                <div className="w-12" /> {/* Spacer */}
+              {/* Center Logo */}
+              <div className="absolute z-20 flex items-center justify-center w-28 h-28 sm:w-32 sm:h-32 rounded-full glass-panel border-brand-orange/40 glow-orange animate-float-slow bg-brand-navy-deep/90 shadow-[0_0_40px_rgba(255,87,34,0.3)]">
+                <Logo iconOnly={true} className="w-16 h-16 sm:w-20 sm:h-20" />
               </div>
 
-              {/* Window Content */}
-              <div className="p-4 sm:p-5 flex flex-col gap-4 sm:gap-5 bg-brand-navy-card/40">
+              {/* Outer Orbit 1 */}
+              <div className="absolute inset-4 sm:inset-0 rounded-full border border-brand-navy-border/40 border-dashed animate-orbit" />
+              
+              {/* Outer Orbit 2 (Reverse) */}
+              <div className="absolute inset-12 sm:inset-10 rounded-full border border-brand-orange/10 animate-orbit-reverse" />
+              
+              {/* Social Icons floating around */}
+              <div className="absolute inset-0 sm:-inset-4 animate-orbit">
+                {/* Instagram */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-gradient-to-tr from-pink-500/20 to-orange-400/20 border-pink-500/30 text-pink-400 animate-orbit-reverse shadow-[0_0_20px_rgba(236,72,153,0.2)]">
+                    <InstagramIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+                  </div>
+                </div>
                 
-                {/* Stats Summary Grid */}
-                <div className="grid grid-cols-3 gap-1.5 sm:gap-3">
-                  <div className="p-1.5 sm:p-3.5 rounded-xl bg-brand-navy-deep/80 border border-brand-navy-border/30 flex flex-col items-start gap-1">
-                    <span className="text-[8px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Reach</span>
-                    <span className="text-xs sm:text-sm md:text-base font-bold text-white">142.8k</span>
-                    <span className="text-[7px] sm:text-[9px] font-bold text-green-400">+18.4%</span>
-                  </div>
-                  <div className="p-1.5 sm:p-3.5 rounded-xl bg-brand-navy-deep/80 border border-brand-navy-border/30 flex flex-col items-start gap-1">
-                    <span className="text-[8px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Events</span>
-                    <span className="text-xs sm:text-sm md:text-base font-bold text-white">12 Active</span>
-                    <span className="text-[7px] sm:text-[9px] font-bold text-brand-orange flex items-center gap-1">
-                      <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-brand-orange animate-ping" />
-                      Live Now
-                    </span>
-                  </div>
-                  <div className="p-1.5 sm:p-3.5 rounded-xl bg-brand-navy-deep/80 border border-brand-navy-border/30 flex flex-col items-start gap-1">
-                    <span className="text-[8px] sm:text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Progress</span>
-                    <span className="text-xs sm:text-sm md:text-base font-bold text-white">94.2%</span>
-                    <span className="text-[7px] sm:text-[9px] font-bold text-brand-orange">Ahead</span>
+                {/* Facebook */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-blue-500/20 border-blue-500/30 text-blue-400 animate-orbit-reverse shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                    <FacebookIcon className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
                 </div>
 
-                {/* Analytical Graph Mock */}
-                <div className="p-4 rounded-xl bg-brand-navy-deep/85 border border-brand-navy-border/40 relative">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-xs font-semibold text-slate-300">Campaign Traffic</span>
-                    <Activity className="h-4 w-4 text-brand-orange" />
-                  </div>
-                  <div className="h-28 w-full flex items-end">
-                    {/* SVG Chart line */}
-                    <svg className="w-full h-full overflow-visible" viewBox="0 0 100 40" preserveAspectRatio="none">
-                      <defs>
-                        <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#FF5722" stopOpacity="0.4" />
-                          <stop offset="100%" stopColor="#FF5722" stopOpacity="0.0" />
-                        </linearGradient>
-                      </defs>
-                      {/* Glow path */}
-                      <path
-                        d="M0,40 Q15,10 30,22 T60,8 T90,25 L100,20 L100,40 L0,40 Z"
-                        fill="url(#chartGlow)"
-                      />
-                      {/* Stroke path */}
-                      <path
-                        d="M0,40 Q15,10 30,22 T60,8 T90,25 L100,20"
-                        fill="none"
-                        stroke="#FF5722"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                      />
-                      {/* Active point marker */}
-                      <circle cx="60" cy="8" r="3" fill="#FF5722" className="animate-ping" />
-                      <circle cx="60" cy="8" r="2" fill="#fff" />
-                    </svg>
-                  </div>
-                  <div className="flex justify-between items-center text-[8px] text-slate-400 mt-2 font-medium">
-                    <span>Mon</span>
-                    <span>Wed</span>
-                    <span>Fri</span>
-                    <span>Sun</span>
+                {/* YouTube */}
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-red-500/20 border-red-500/30 text-red-500 animate-orbit-reverse shadow-[0_0_20px_rgba(239,68,68,0.2)]">
+                    <YoutubeIcon className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
                 </div>
 
-                {/* Task Monitor & Branding Updates list */}
-                <div className="flex flex-col gap-2">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider text-left pl-1">Ongoing Coordination</span>
-                  
-                  {/* Task 1 */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 sm:p-3 rounded-lg bg-brand-navy-deep/60 border border-brand-navy-border/20 text-left hover:border-brand-orange/30 transition duration-200 gap-2 sm:gap-0">
-                    <div className="flex items-center gap-2.5">
-                      <div className="p-1.5 rounded-md bg-brand-orange/10 text-brand-orange">
-                        <Award className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] sm:text-[11px] font-semibold text-white">LinkedIn Brand Optimization</div>
-                        <div className="text-[8px] sm:text-[9px] text-slate-400">Personal Branding</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1.5 self-end sm:self-auto">
-                      <span className="text-[8px] sm:text-[9px] font-semibold text-slate-300">85%</span>
-                      <div className="w-12 h-1.5 bg-brand-navy-border rounded-full overflow-hidden">
-                        <div className="h-full bg-brand-orange rounded-full" style={{ width: '85%' }} />
-                      </div>
-                    </div>
+                {/* Google Ads */}
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-yellow-500/20 border-yellow-500/30 text-yellow-400 animate-orbit-reverse shadow-[0_0_20px_rgba(234,179,8,0.2)]">
+                    <GoogleAdsIcon className="w-7 h-7 sm:w-8 sm:h-8" />
                   </div>
-
-                  {/* Task 2 */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 sm:p-3 rounded-lg bg-brand-navy-deep/60 border border-brand-navy-border/20 text-left hover:border-brand-orange/30 transition duration-200 gap-2 sm:gap-0">
-                    <div className="flex items-center gap-2.5">
-                      <div className="p-1.5 rounded-md bg-brand-orange/10 text-brand-orange">
-                        <Calendar className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] sm:text-[11px] font-semibold text-white">Corporate Workshop Launch</div>
-                        <div className="text-[8px] sm:text-[9px] text-slate-400">Event Coordination</div>
-                      </div>
-                    </div>
-                    <span className="text-[8px] font-bold px-2 py-0.5 rounded bg-brand-orange/20 text-brand-orange border border-brand-orange/30 self-end sm:self-auto">In 2 Days</span>
-                  </div>
-                  
-                  {/* Task 3 */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between p-2.5 sm:p-3 rounded-lg bg-brand-navy-deep/60 border border-brand-navy-border/20 text-left hover:border-brand-orange/30 transition duration-200 gap-2 sm:gap-0">
-                    <div className="flex items-center gap-2.5">
-                      <div className="p-1.5 rounded-md bg-brand-orange/10 text-brand-orange">
-                        <CheckCircle className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <div className="text-[10px] sm:text-[11px] font-semibold text-white">Social Campaign Strategy</div>
-                        <div className="text-[8px] sm:text-[9px] text-slate-400">Marketing Services</div>
-                      </div>
-                    </div>
-                    <span className="text-[8px] font-bold px-2 py-0.5 rounded bg-green-500/20 text-green-400 border border-green-500/30 self-end sm:self-auto">Completed</span>
-                  </div>
-
                 </div>
-
               </div>
+
+              <div className="absolute inset-6 sm:inset-4 animate-orbit-reverse">
+                {/* LinkedIn */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-blue-600/20 border-blue-600/30 text-blue-500 animate-orbit shadow-[0_0_20px_rgba(37,99,235,0.2)]">
+                    <LinkedinIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+                  </div>
+                </div>
+
+                {/* TikTok */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-slate-800/60 border-slate-700/50 text-white animate-orbit shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    <TikTokIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+                  </div>
+                </div>
+
+                {/* Medium */}
+                <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-zinc-900/40 border-zinc-500/30 text-white animate-orbit shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    <MediumIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+                  </div>
+                </div>
+
+                {/* Meta Suite */}
+                <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl glass-panel flex items-center justify-center bg-blue-500/10 border-blue-400/30 text-blue-400 animate-orbit shadow-[0_0_20px_rgba(59,130,246,0.15)]">
+                    <MetaIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             {/* Subtle decorative dot grid graphics */}
