@@ -1,4 +1,3 @@
-import React from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
 import Logo from './Logo';
 
@@ -117,21 +116,26 @@ export default function Hero() {
             </div>
 
             {/* Title / Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
-              Turn Your Spark <br />
-              <span className="text-gradient-orange">Into Success</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-4">
+              Turn Ideas <br />
+              <span className="text-gradient-orange">Into Impact.</span>
             </h1>
 
-            {/* Subheading */}
-            <p className="text-slate-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-8 max-w-xl">
-              Creative marketing, professional events, and organized project coordination for students, startups, and businesses.
+            {/* Sub Headline */}
+            <div className="text-base sm:text-lg md:text-xl font-bold text-brand-orange tracking-wide mb-4">
+              Creative Content. Smart Marketing. Real Growth.
+            </div>
+
+            {/* Description */}
+            <p className="text-slate-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed mb-8 max-w-xl">
+              We help businesses, startups, educational institutions, and personal brands grow through content creation, brand management, and digital marketing.
             </p>
 
             {/* CTA Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4 w-full sm:w-auto">
               <button
                 onClick={() => handleScrollTo('contact')}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-white bg-brand-orange hover:bg-brand-orange-dark transition-all duration-300 glow-orange hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-white bg-brand-orange hover:bg-brand-orange-dark transition-all duration-300 glow-orange hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Get Started
                 <ArrowRight className="ml-2.5 h-5 w-5" />
@@ -139,9 +143,9 @@ export default function Hero() {
               
               <button
                 onClick={() => handleScrollTo('services')}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-slate-300 hover:text-white transition-all duration-200 border border-brand-navy-border hover:border-brand-orange/50 hover:bg-brand-navy-card/30 relative group"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-slate-300 hover:text-white transition-all duration-200 border border-brand-navy-border hover:border-brand-orange/50 hover:bg-brand-navy-card/30 relative group cursor-pointer"
               >
-                <span>Explore Services</span>
+                <span>Our Services</span>
                 <span className="absolute bottom-3 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-brand-orange transition-all duration-300 group-hover:w-[60%]" />
               </button>
             </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from './Logo';
 
 const LinkedInIcon = ({ className }) => (
@@ -53,9 +52,15 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-brand-navy-border/50">
           
-          {/* Logo */}
-          <div>
+          {/* Logo & Slogan */}
+          <div className="flex flex-col items-center md:items-start gap-2">
             <Logo lightText={true} />
+            <p className="text-xs font-semibold text-brand-orange uppercase tracking-wider pl-1">
+              From Spark to Success
+            </p>
+            <p className="text-[11px] text-slate-400 font-medium pl-1">
+              Creative Content • Smart Marketing • Real Growth
+            </p>
           </div>
 
           {/* Links */}
@@ -65,6 +70,7 @@ export default function Footer() {
             <a href="#services" onClick={(e) => handleScrollTo(e, 'services')} className="hover:text-brand-orange transition">Services</a>
             <a href="#who-we-serve" onClick={(e) => handleScrollTo(e, 'who-we-serve')} className="hover:text-brand-orange transition">Who We Serve</a>
             <a href="#why-choose-us" onClick={(e) => handleScrollTo(e, 'why-choose-us')} className="hover:text-brand-orange transition">Why Us</a>
+            <a href="#process" onClick={(e) => handleScrollTo(e, 'process')} className="hover:text-brand-orange transition">Process</a>
             <a href="#contact" onClick={(e) => handleScrollTo(e, 'contact')} className="hover:text-brand-orange transition">Contact</a>
           </div>
 

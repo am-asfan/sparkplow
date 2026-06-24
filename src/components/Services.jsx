@@ -1,62 +1,70 @@
-import React from 'react';
-import { Megaphone, CalendarRange, ListChecks, UserCog, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Palette, CalendarRange, Megaphone, Sparkles, CheckCircle2 } from 'lucide-react';
+import Modal from './Modal';
 
 export default function Services() {
+  const [activeService, setActiveService] = useState(null);
+
   const serviceList = [
     {
-      title: 'Marketing Services',
-      description: 'Expand your reach and drive meaningful interactions with custom digital strategies.',
-      icon: Megaphone,
+      title: 'Content Creation',
+      description: 'Engaging social media graphics, high-impact video reels, and copywriting designed to captivate your audience.',
+      icon: Palette,
       features: [
-        'Social Media Marketing',
-        'Content Creation',
-        'Digital Marketing Support',
-        'Brand Promotion',
-        'Marketing Campaign Planning',
-        'Audience Engagement Strategies'
+        'Social Media Graphics',
+        'High-Impact Video & Reels',
+        'Copywriting & Storytelling',
+        'Professional Photography',
+        'Custom Branding Assets',
+        'Branded Content Campaigns'
       ],
-      benefit: 'Drive traffic, build brand equity, and generate high-intent leads.'
+      benefit: 'Capture undivided attention and build a visually stunning brand narrative.',
+      popupDescription: 'Professional social media content, graphic design, videos, reels, photography, copywriting, and branded content that captures attention.'
     },
     {
-      title: 'Event Management',
-      description: 'End-to-end management for seamless execution of both virtual and physical events.',
+      title: 'Content Management',
+      description: 'End-to-end content scheduling, page management, and audience engagement to keep your brand consistently active.',
       icon: CalendarRange,
       features: [
-        'Corporate Events',
-        'Educational Events',
-        'Workshops',
-        'Seminars',
-        'Product Launches',
-        'Event Planning and Coordination'
+        'Content Planning & Calendars',
+        'Active Page Management',
+        'Community & Audience Engagement',
+        'Performance & Analytics Tracking',
+        'Multi-Channel Scheduling',
+        'Brand Consistency Audits'
       ],
-      benefit: 'Flawless execution, high attendance rates, and memorable attendee experiences.'
+      benefit: 'Maintain consistency across all channels without spending your own hours.',
+      popupDescription: 'Content planning, scheduling, page management, audience engagement, and performance tracking to keep your brand active and organized.'
     },
     {
-      title: 'Project Coordination',
-      description: 'Ensure smooth operations, remove friction, and keep projects perfectly aligned with deadlines.',
-      icon: ListChecks,
+      title: 'Digital Marketing',
+      description: 'Result-driven marketing campaigns, lead generation, and growth strategies to scale your digital presence.',
+      icon: Megaphone,
       features: [
-        'Project Planning',
-        'Team Coordination',
-        'Timeline Management',
-        'Task Monitoring',
-        'Progress Tracking',
-        'Project Support'
+        'Targeted Paid Campaigns',
+        'Social Media Marketing',
+        'Lead Generation Funnels',
+        'Brand Awareness Strategies',
+        'Performance Marketing',
+        'Growth Analytics'
       ],
-      benefit: 'Keep deliverables on time, optimize resource usage, and remove bottlenecks.'
+      benefit: 'Convert passive impressions into loyal customers and drive growth.',
+      popupDescription: 'Social media marketing, paid campaigns, brand awareness strategies, lead generation, and growth-focused marketing solutions.'
     },
     {
-      title: 'Personal Branding',
-      description: 'Optimize your professional profile and position yourself as a thought leader.',
-      icon: UserCog,
+      title: 'Branding',
+      description: 'Cohesive brand identities, visual style guides, and communication strategies that make your business unforgettable.',
+      icon: Sparkles,
       features: [
-        'LinkedIn Profile Optimization',
-        'Personal Brand Development',
-        'Portfolio Guidance',
-        'Content Planning',
-        'Professional Profile Enhancement'
+        'Logo & Visual Identity Design',
+        'Brand Positioning',
+        'Style Guides & Typographies',
+        'Communication Strategies',
+        'Brand Voice Development',
+        'Competitive Analysis'
       ],
-      benefit: 'Position yourself as an authority, unlock opportunities, and build influence.'
+      benefit: 'Establish a distinct market presence that builds instant trust and authority.',
+      popupDescription: 'Brand identity, visual branding, brand positioning, and communication strategies that make your business memorable.'
     }
   ];
 
@@ -76,11 +84,11 @@ export default function Services() {
             <span>What We Do</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Services We <span className="text-brand-orange">Provide</span>
+            What <span className="text-brand-orange">We Do</span>
           </h2>
           <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
-            We provide custom, high-impact strategies across marketing, events, project coordination, and brand positioning to help you grow.
+            Everything your brand needs to grow.
           </p>
         </div>
 
@@ -91,7 +99,8 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="glass-panel glass-card-hover rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-left group relative overflow-hidden"
+                onClick={() => setActiveService(service)}
+                className="glass-panel glass-card-hover rounded-2xl p-6 sm:p-8 flex flex-col justify-between text-left group relative overflow-hidden cursor-pointer"
               >
                 {/* Subtle backlight */}
                 <div className="absolute -top-10 -right-10 w-28 h-28 bg-brand-orange/5 rounded-full blur-2xl group-hover:bg-brand-orange/10 transition duration-300" />
@@ -102,7 +111,7 @@ export default function Services() {
                     <div className="p-3.5 rounded-xl bg-brand-orange/10 text-brand-orange border border-brand-orange/20 group-hover:scale-110 transition duration-300 shadow-[0_0_15px_rgba(255,87,34,0.1)]">
                       <IconComponent className="h-6 w-6" />
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight group-hover:text-brand-orange transition duration-200">
                       {service.title}
                     </h3>
                   </div>
@@ -134,6 +143,16 @@ export default function Services() {
         </div>
 
       </div>
+
+      {/* Service Popup Modal */}
+      <Modal
+        isOpen={activeService !== null}
+        onClose={() => setActiveService(null)}
+        title={activeService?.title}
+        description={activeService?.popupDescription}
+        icon={activeService?.icon}
+      />
     </section>
   );
 }
+

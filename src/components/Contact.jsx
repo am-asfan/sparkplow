@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Mail, CheckCircle2 } from 'lucide-react';
 
 const WhatsAppIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -113,11 +113,11 @@ export default function Contact() {
             <span>Connect With Us</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Get in <span className="text-brand-orange">Touch</span>
+            Ready to Grow Your <span className="text-brand-orange">Brand?</span>
           </h2>
           <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
-            Ready to turn your spark of inspiration into a commercial success? Send us a message via WhatsApp directly.
+            Let's create, manage, and market your brand for long-term success.
           </p>
         </div>
 
@@ -335,7 +335,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-2 py-3.5 rounded-xl font-bold bg-brand-orange hover:bg-brand-orange-dark text-white flex items-center justify-center gap-2.5 transition duration-300 glow-orange disabled:opacity-50"
+                className="w-full mt-2 py-3.5 rounded-xl font-bold bg-brand-orange hover:bg-brand-orange-dark text-white flex items-center justify-center gap-2.5 transition duration-300 glow-orange disabled:opacity-50 cursor-pointer"
               >
                 {isSubmitting ? (
                   <>
@@ -345,7 +345,7 @@ export default function Contact() {
                 ) : (
                   <>
                     <WhatsAppIcon className="h-5 w-5" />
-                    <span>Send via WhatsApp</span>
+                    <span>Contact Us Today</span>
                   </>
                 )}
               </button>

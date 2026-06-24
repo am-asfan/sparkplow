@@ -1,32 +1,34 @@
-import React from 'react';
-import { HeartHandshake, Sparkles, ShieldCheck, LineChart, MessageSquare } from 'lucide-react';
+import { useState } from 'react';
+import { Sparkles, Compass, ShieldCheck, TrendingUp } from 'lucide-react';
+import Modal from './Modal';
 
 export default function WhyChooseUs() {
+  const [activeReason, setActiveReason] = useState(null);
+
   const reasons = [
     {
-      title: 'Personalized Support',
-      description: 'We do not believe in cookie-cutter models. Every client receives custom roadmap strategies tailored to their unique market conditions.',
-      icon: HeartHandshake,
-    },
-    {
-      title: 'Creative Solutions',
-      description: 'We merge artistic design with digital tools to produce unique campaigns and content that stands out.',
+      title: 'Creative Thinking',
+      description: 'Fresh ideas and engaging content designed to make your brand stand out.',
+      popupDescription: 'Fresh ideas and engaging content designed to make your brand stand out. We break through the digital noise with unique, tailor-made concepts that capture your audience\'s attention and drive real interest.',
       icon: Sparkles,
     },
     {
-      title: 'Professional Approach',
-      description: 'We execute project boards, timeline sheets, and event schedules with strict professional discipline and tracking.',
+      title: 'Strategic Approach',
+      description: 'Every project is guided by clear goals and proven marketing strategies.',
+      popupDescription: 'Every project is guided by clear goals and proven marketing strategies. We don\'t guess—we analyze. Our data-backed strategies ensure that your marketing budget is spent where it delivers the highest return on investment.',
+      icon: Compass,
+    },
+    {
+      title: 'Professional Quality',
+      description: 'High-quality work delivered with consistency, creativity, and attention to detail.',
+      popupDescription: 'High-quality work delivered with consistency, creativity, and attention to detail. We pride ourselves on executing projects to the highest standard, ensuring that every asset represents your brand flawlessly.',
       icon: ShieldCheck,
     },
     {
-      title: 'Growth-Focused Mindset',
-      description: 'Our campaigns and profiles are optimized for conversions, reach, visibility, and commercial scalability.',
-      icon: LineChart,
-    },
-    {
-      title: 'Strong Communication',
-      description: 'We establish seamless loops, transparent reports, and clear expectations throughout the execution process.',
-      icon: MessageSquare,
+      title: 'Growth Focused',
+      description: 'We focus on helping clients increase visibility, engagement, and business growth.',
+      popupDescription: 'We focus on helping clients increase visibility, engagement, and business growth. Your success is our primary metric. We design every campaign and optimize every asset to actively scale your brand\'s reach and impact.',
+      icon: TrendingUp,
     },
   ];
 
@@ -46,7 +48,7 @@ export default function WhyChooseUs() {
             <span>Our Advantage</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Why Choose <span className="text-brand-orange">SparkPlow</span>
+            Why <span className="text-brand-orange">SparkPlow?</span>
           </h2>
           <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
@@ -54,14 +56,15 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        {/* Reasons Grid (Consolidated flex-wrap for perfect centering on all devices) */}
-        <div className="flex flex-wrap justify-center gap-8 mt-12 max-w-6xl mx-auto">
+        {/* Reasons Grid (4-column responsive grid layout) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 max-w-7xl mx-auto">
           {reasons.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={index}
-                className="glass-panel glass-card-hover rounded-2xl p-8 text-left flex flex-col items-start relative overflow-hidden group w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]"
+                onClick={() => setActiveReason(item)}
+                className="glass-panel glass-card-hover rounded-2xl p-8 text-left flex flex-col items-start relative overflow-hidden group cursor-pointer"
               >
                 <div className="absolute -top-10 -right-10 w-24 h-24 bg-brand-orange/5 rounded-full blur-xl group-hover:bg-brand-orange/15 transition-all duration-300" />
                 
@@ -80,6 +83,16 @@ export default function WhyChooseUs() {
         </div>
 
       </div>
+
+      {/* Why Choose Us Popup Modal */}
+      <Modal
+        isOpen={activeReason !== null}
+        onClose={() => setActiveReason(null)}
+        title={activeReason?.title}
+        description={activeReason?.popupDescription}
+        icon={activeReason?.icon}
+      />
     </section>
   );
 }
+

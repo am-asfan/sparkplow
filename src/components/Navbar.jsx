@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Menu, X } from 'lucide-react';
+
+const navLinks = [
+  { name: 'Home', href: '#home', id: 'home' },
+  { name: 'About', href: '#about', id: 'about' },
+  { name: 'Services', href: '#services', id: 'services' },
+  { name: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve' },
+  { name: 'Why Us', href: '#why-choose-us', id: 'why-choose-us' },
+  { name: 'Process', href: '#process', id: 'process' },
+  { name: 'Contact', href: '#contact', id: 'contact' },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-
-  const navLinks = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Services', href: '#services', id: 'services' },
-    { name: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve' },
-    { name: 'Why Us', href: '#why-choose-us', id: 'why-choose-us' },
-    { name: 'Values', href: '#values', id: 'values' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {

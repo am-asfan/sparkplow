@@ -1,56 +1,43 @@
-import React from 'react';
 import {
-  GraduationCap,
-  Briefcase,
-  Lightbulb,
   Rocket,
-  Store,
-  School,
   Building2,
-  TrendingUp
+  GraduationCap,
+  Users2,
+  Lightbulb,
+  UserCog
 } from 'lucide-react';
 
 export default function TargetAudience() {
   const audienceList = [
     {
-      title: 'Students',
-      description: 'Unlock career opportunities, build a strong personal brand, and find portfolio guidance.',
-      icon: GraduationCap,
-    },
-    {
-      title: 'Professionals',
-      description: 'Optimize your LinkedIn presence, expand your network, and position yourself as an authority.',
-      icon: Briefcase,
-    },
-    {
-      title: 'Entrepreneurs',
-      description: 'Turn your sparks of ideas into viable business models and market opportunities.',
-      icon: Lightbulb,
-    },
-    {
-      title: 'Startup Founders',
-      description: 'Get support for early-stage planning, campaign execution, and product launches.',
+      title: 'Startups',
+      description: 'Accelerate early-stage growth with creative launch campaigns, content strategies, and strategic brand positioning.',
       icon: Rocket,
     },
     {
-      title: 'Small Businesses',
-      description: 'Build local presence, scale customer engagement, and streamline operational tasks.',
-      icon: Store,
-    },
-    {
-      title: 'Educational Institutions',
-      description: 'Plan educational summits, coordinate student workshops, and enhance engagement.',
-      icon: School,
-    },
-    {
-      title: 'Organizations',
-      description: 'Execute high-impact seminars, corporate conferences, and structured project timelines.',
+      title: 'Businesses',
+      description: 'Scale your market presence, streamline customer acquisition, and maintain consistent brand communications.',
       icon: Building2,
     },
     {
-      title: 'Growing Brands',
-      description: 'Execute targeted digital marketing support and run strategic brand promotions.',
-      icon: TrendingUp,
+      title: 'Educational Institutions',
+      description: 'Engage students, promote courses, and coordinate high-impact academic seminars and digital campaigns.',
+      icon: GraduationCap,
+    },
+    {
+      title: 'Organizations',
+      description: 'Structure communications, run public campaigns, and coordinate events with professional execution and tracking.',
+      icon: Users2,
+    },
+    {
+      title: 'Entrepreneurs',
+      description: 'Transform raw ideas into viable digital models, establishing market visibility and commercial opportunities.',
+      icon: Lightbulb,
+    },
+    {
+      title: 'Personal Brands',
+      description: 'Optimize your professional presence, build LinkedIn authority, and position yourself as a trusted industry leader.',
+      icon: UserCog,
     },
   ];
 
@@ -70,7 +57,7 @@ export default function TargetAudience() {
             <span>Our Ecosystem</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Who We <span className="text-brand-orange">Serve</span>
+            Who We <span className="text-brand-orange">Work With</span>
           </h2>
           <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
@@ -78,8 +65,8 @@ export default function TargetAudience() {
           </p>
         </div>
 
-        {/* 8-Card Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        {/* 6-Card Grid Layout (3 columns on desktop, centered) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
           {audienceList.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -115,3 +102,4 @@ export default function TargetAudience() {
     </section>
   );
 }
+
