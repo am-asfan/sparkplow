@@ -298,16 +298,16 @@ export default function Contact() {
                     }`}
                   >
                     <option value="" disabled>Select a service</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Content Creation">Content Creation</option>
                     <option value="Social Media Management">Social Media Management</option>
-                    <option value="Branding & Brand Development">Branding &amp; Brand Development</option>
-                    <option value="Website Design & Development">Website Design &amp; Development</option>
-                    <option value="Content Creation & Graphic Design">Content Creation &amp; Graphic Design</option>
-                    <option value="Event Management">Event Management</option>
-                    <option value="Corporate Event Planning">Corporate Event Planning</option>
-                    <option value="Project Management">Project Management</option>
-                    <option value="Business Consulting">Business Consulting</option>
-                    <option value="Lead Generation & Growth Strategy">Lead Generation &amp; Growth Strategy</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Branding">Branding</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="Video Production">Video Production</option>
+                    <option value="Content Strategy">Content Strategy</option>
+                    <option value="Lead Generation">Lead Generation</option>
+                    <option value="Website Content Development">Website Content Development</option>
+                    <option value="Marketing Consultation">Marketing Consultation</option>
                     <option value="Other">Other</option>
                   </select>
                   {errors.service && <span className="text-[10px] text-red-400 pl-0.5">{errors.service}</span>}
