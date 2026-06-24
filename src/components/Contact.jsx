@@ -110,14 +110,14 @@ export default function Contact() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-semibold uppercase tracking-wider mb-4">
-            <span>Connect With Us</span>
+            <span>Get a Free Consultation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-            Ready to Grow Your <span className="text-brand-orange">Brand?</span>
+            How Can We Help Your <span className="text-brand-orange">Business Grow?</span>
           </h2>
           <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
-            Let's create, manage, and market your brand for long-term success.
+            Select the services you're interested in, and our team will create a customized solution tailored to your business goals.
           </p>
         </div>
 
@@ -127,9 +127,9 @@ export default function Contact() {
           {/* Left Column: Direct channels & links */}
           <div className="lg:col-span-5 text-left flex flex-col justify-between lg:h-full">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-4">Let's start your journey</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Start Growing Your Business Today</h3>
               <p className="text-slate-400 text-sm leading-relaxed mb-8">
-                Have an event to plan, a brand to promote, a team to coordinate, or a personal LinkedIn profile to optimize? Fill out the form and reach us instantly on WhatsApp.
+                Whether you need expert content creation, a full digital marketing strategy, social media management, or branding services — SparkPlow delivers results. Tell us your goals and we'll get back to you instantly on WhatsApp.
               </p>
 
               {/* Direct Link blocks */}
@@ -285,9 +285,9 @@ export default function Contact() {
                   {errors.phone && <span className="text-[10px] text-red-400 pl-0.5">{errors.phone}</span>}
                 </div>
 
-                {/* Service Required */}
+                {/* Service Required – SEO/AEO Optimized */}
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="service" className="text-xs font-semibold text-slate-300 pl-0.5">Service Required</label>
+                  <label htmlFor="service" className="text-xs font-semibold text-slate-300 pl-0.5">How Can We Help Your Business?</label>
                   <select
                     id="service"
                     name="service"
@@ -297,15 +297,17 @@ export default function Contact() {
                       errors.service ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   >
-                    <option value="" disabled>Select a service</option>
-                    <option value="Content Creation">Content Creation</option>
+                    <option value="" disabled>Choose a service to get started</option>
+                    <option value="Content Creation Services">Content Creation Services</option>
                     <option value="Social Media Management">Social Media Management</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Branding">Branding</option>
+                    <option value="Digital Marketing Services">Digital Marketing Services</option>
+                    <option value="Branding & Brand Development">Branding &amp; Brand Development</option>
+                    <option value="Content Management Services">Content Management Services</option>
                     <option value="Graphic Design">Graphic Design</option>
-                    <option value="Video Production">Video Production</option>
-                    <option value="Content Strategy">Content Strategy</option>
-                    <option value="Lead Generation">Lead Generation</option>
+                    <option value="Video Production & Editing">Video Production &amp; Editing</option>
+                    <option value="Content Marketing">Content Marketing</option>
+                    <option value="Marketing Strategy">Marketing Strategy</option>
+                    <option value="Lead Generation Services">Lead Generation Services</option>
                     <option value="Website Content Development">Website Content Development</option>
                     <option value="Marketing Consultation">Marketing Consultation</option>
                     <option value="Other">Other</option>
@@ -316,14 +318,14 @@ export default function Contact() {
 
               {/* Message */}
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="message" className="text-xs font-semibold text-slate-300 pl-0.5">Message</label>
+                <label htmlFor="message" className="text-xs font-semibold text-slate-300 pl-0.5">Tell Us About Your Business Goals</label>
                 <textarea
                   id="message"
                   name="message"
                   rows="5"
                   value={formState.message}
                   onChange={handleInputChange}
-                  placeholder="Describe your project, timeline, or objectives..."
+                  placeholder="Describe your business goals, project scope, or any specific services you're looking for. The more detail you share, the better we can tailor a solution for you."
                   className={`px-4 py-3 rounded-xl bg-brand-navy-deep/80 border text-slate-100 text-sm focus:outline-none focus:border-brand-orange transition duration-200 resize-none ${
                     errors.message ? 'border-red-500/80' : 'border-brand-navy-border/70'
                   }`}
@@ -345,7 +347,7 @@ export default function Contact() {
                 ) : (
                   <>
                     <WhatsAppIcon className="h-5 w-5" />
-                    <span>Contact Us Today</span>
+                    <span>Get My Free Strategy Session</span>
                   </>
                 )}
               </button>
