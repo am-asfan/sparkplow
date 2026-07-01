@@ -113,19 +113,11 @@ export default function Contact() {
             <span>Get a Free Consultation</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">
-<<<<<<< HEAD
             How Can We Help Your <span className="text-brand-orange">Business Grow?</span>
           </h2>
           <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
           <p className="text-slate-300 text-lg leading-relaxed">
             Select the services you're interested in, and our team will create a customized solution tailored to your business goals.
-=======
-            Ready to Grow Your <span className="text-brand-orange">Brand?</span>
-          </h2>
-          <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
-          <p className="text-slate-300 text-lg leading-relaxed">
-            Let's create, manage, and market your brand for long-term success.
->>>>>>> 6770feb (Updated website)
           </p>
         </div>
 
@@ -305,7 +297,6 @@ export default function Contact() {
                       errors.service ? 'border-red-500/80' : 'border-brand-navy-border/70'
                     }`}
                   >
-<<<<<<< HEAD
                     <option value="" disabled>Choose a service to get started</option>
                     <option value="Content Creation Services">Content Creation Services</option>
                     <option value="Social Media Management">Social Media Management</option>
@@ -319,19 +310,6 @@ export default function Contact() {
                     <option value="Lead Generation Services">Lead Generation Services</option>
                     <option value="Website Content Development">Website Content Development</option>
                     <option value="Marketing Consultation">Marketing Consultation</option>
-=======
-                    <option value="" disabled>Select a service</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Social Media Management">Social Media Management</option>
-                    <option value="Branding & Brand Development">Branding &amp; Brand Development</option>
-                    <option value="Website Design & Development">Website Design &amp; Development</option>
-                    <option value="Content Creation & Graphic Design">Content Creation &amp; Graphic Design</option>
-                    <option value="Event Management">Event Management</option>
-                    <option value="Corporate Event Planning">Corporate Event Planning</option>
-                    <option value="Project Management">Project Management</option>
-                    <option value="Business Consulting">Business Consulting</option>
-                    <option value="Lead Generation & Growth Strategy">Lead Generation &amp; Growth Strategy</option>
->>>>>>> 6770feb (Updated website)
                     <option value="Other">Other</option>
                   </select>
                   {errors.service && <span className="text-[10px] text-red-400 pl-0.5">{errors.service}</span>}
@@ -369,11 +347,7 @@ export default function Contact() {
                 ) : (
                   <>
                     <WhatsAppIcon className="h-5 w-5" />
-<<<<<<< HEAD
                     <span>Get My Free Strategy Session</span>
-=======
-                    <span>Contact Us Today</span>
->>>>>>> 6770feb (Updated website)
                   </>
                 )}
               </button>

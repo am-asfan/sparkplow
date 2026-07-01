@@ -25,15 +25,7 @@ export default function Modal({ isOpen, onClose, title, description, icon: Icon,
       />
       
       {/* Modal Container */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div className="relative w-full max-w-lg rounded-2xl glass-panel border border-brand-orange/30 p-6 sm:p-8 text-center shadow-2xl overflow-hidden z-10 transition-all transform scale-100 duration-300 animate-scale-in">
-=======
-      <div className="relative w-full max-w-lg rounded-2xl glass-panel border border-brand-orange/30 p-6 sm:p-8 text-left shadow-2xl overflow-hidden z-10 transition-all transform scale-100 duration-300 animate-scale-in">
->>>>>>> 6770feb (Updated website)
-=======
       <div className={`relative w-full ${size === 'lg' ? 'max-w-3xl' : 'max-w-lg'} rounded-2xl glass-panel border border-brand-orange/30 p-6 sm:p-8 text-left shadow-2xl overflow-hidden z-10 transition-all transform scale-100 duration-300 animate-scale-in flex flex-col max-h-[90vh]`}>
->>>>>>> 0517d66 (Update Sparkplow content content)
         {/* Soft backlight */}
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none" />
         
@@ -47,27 +39,7 @@ export default function Modal({ isOpen, onClose, title, description, icon: Icon,
         </button>
 
         {/* Content */}
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <div className="flex flex-col items-center gap-4">
-          {Icon && (
-            <div className="p-4 rounded-2xl bg-brand-orange/15 text-brand-orange border border-brand-orange/20 shadow-[0_0_20px_rgba(255,111,0,0.15)]">
-              <Icon className="h-7 w-7" />
-            </div>
-          )}
-          
-          <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-2 text-center">
-            {title}
-          </h3>
-          
-          <div className="h-1 w-16 bg-gradient-to-r from-transparent via-brand-orange to-transparent rounded-full opacity-80" />
-          
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-2 whitespace-pre-line text-center">
-=======
-        <div className="flex flex-col items-start gap-4">
-=======
         <div className="flex flex-col items-start gap-4 overflow-y-auto pr-2 custom-scrollbar w-full mt-2">
->>>>>>> 0517d66 (Update Sparkplow content content)
           {Icon && (
             <div className="p-3.5 rounded-xl bg-brand-orange/15 text-brand-orange border border-brand-orange/20 w-fit">
               <Icon className="h-6 w-6" />
@@ -80,12 +52,6 @@ export default function Modal({ isOpen, onClose, title, description, icon: Icon,
           
           <div className="h-1.5 w-12 bg-brand-orange rounded-full" />
           
-<<<<<<< HEAD
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-2 whitespace-pre-line">
->>>>>>> 6770feb (Updated website)
-            {description}
-          </p>
-=======
           {description && (
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mt-2 whitespace-pre-line w-full">
               {description}
@@ -93,7 +59,6 @@ export default function Modal({ isOpen, onClose, title, description, icon: Icon,
           )}
 
           {children}
->>>>>>> 0517d66 (Update Sparkplow content content)
         </div>
       </div>
     </div>
