@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Palette, CalendarRange, Megaphone, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Palette, CalendarRange, Sparkles, CheckCircle2 } from 'lucide-react';
 import Modal from './Modal';
 
 export default function Services() {
@@ -8,63 +8,236 @@ export default function Services() {
   const serviceList = [
     {
       title: 'Content Creation',
-      description: 'Engaging social media graphics, high-impact video reels, and copywriting designed to captivate your audience.',
+      description: 'Engaging social media graphics, high-impact video reels, motion animation, copy, campaigns, and creative content that captivates your audience.',
       icon: Palette,
       features: [
-        'Social Media Graphics',
-        'High-Impact Video & Reels',
-        'Copywriting & Storytelling',
-        'Professional Photography',
-        'Custom Branding Assets',
-        'Branded Content Campaigns'
+        'Creative Design & Graphics',
+        'Video Production & Reels',
+        'Video Editing & Motion',
+        'Copywriting & Scripts',
+        'Campaign Content Assets'
       ],
       benefit: 'Capture undivided attention and build a visually stunning brand narrative.',
-      popupDescription: 'Professional social media content, graphic design, videos, reels, photography, copywriting, and branded content that captures attention.'
+      popupDescription: 'We provide full-scale content creation services to build your brand identity and engagement online.',
+      deliverables: [
+        {
+          category: 'Creative Design',
+          items: [
+            'Social Media Graphics',
+            'Carousel Posts',
+            'Story Designs',
+            'Banner Designs',
+            'Promotional Creatives',
+            'Infographics',
+            'Motion Graphics',
+            'Custom Illustrations'
+          ]
+        },
+        {
+          category: 'Video Production',
+          items: [
+            'Short-Form Videos',
+            'Social Media Reels',
+            'Promotional Videos',
+            'Product Videos',
+            'Corporate Videos',
+            'Event Highlight Videos',
+            'YouTube Shorts',
+            'TikTok Videos'
+          ]
+        },
+        {
+          category: 'Video Editing',
+          items: [
+            'Motion Animation',
+            'Subtitle & Caption Editing'
+          ]
+        },
+        {
+          category: 'Content Writing',
+          items: [
+            'Social Media Copywriting',
+            'Caption Writing',
+            'Storytelling',
+            'Marketing Copy',
+            'Promotional Content',
+            'Website Content',
+            'Blog Writing',
+            'Call-to-Action Writing',
+            'Script Writing'
+          ]
+        },
+        {
+          category: 'Campaign Content',
+          items: [
+            'Product Launch Campaigns',
+            'Brand Awareness Campaigns',
+            'Seasonal Campaigns',
+            'Promotional Campaigns',
+            'Event Campaigns',
+            'Creative Campaign Assets'
+          ]
+        }
+      ]
     },
     {
-      title: 'Content Management',
-      description: 'End-to-end content scheduling, page management, and audience engagement to keep your brand consistently active.',
+      title: 'Social Media Management',
+      description: 'End-to-end content scheduling, page management, community engagement, and analytics tracking to keep your brand consistently active.',
       icon: CalendarRange,
       features: [
-        'Content Planning & Calendars',
-        'Active Page Management',
-        'Community & Audience Engagement',
-        'Performance & Analytics Tracking',
-        'Multi-Channel Scheduling',
-        'Brand Consistency Audits'
+        'Strategy & Content Planning',
+        'Active Platform Management',
+        'Community & Message Response',
+        'Consistent Content Scheduling',
+        'Analytics & Monthly Reports',
+        'Profile & Performance Audits'
       ],
       benefit: 'Maintain consistency across all channels without spending your own hours.',
-      popupDescription: 'Content planning, scheduling, page management, audience engagement, and performance tracking to keep your brand active and organized.'
-    },
-    {
-      title: 'Digital Marketing',
-      description: 'Result-driven marketing campaigns, lead generation, and growth strategies to scale your digital presence.',
-      icon: Megaphone,
-      features: [
-        'Targeted Paid Campaigns',
-        'Social Media Marketing',
-        'Lead Generation Funnels',
-        'Brand Awareness Strategies',
-        'Performance Marketing',
-        'Growth Analytics'
-      ],
-      benefit: 'Convert passive impressions into loyal customers and drive growth.',
-      popupDescription: 'Social media marketing, paid campaigns, brand awareness strategies, lead generation, and growth-focused marketing solutions.'
+      popupDescription: 'We handle your entire social media lifecycle to ensure your channels stay fresh, active, and growing.',
+      deliverables: [
+        {
+          category: 'Strategy & Planning',
+          items: [
+            'Social Media Strategy',
+            'Content Planning',
+            'Monthly Content Calendar',
+            'Campaign Planning',
+            'Content Scheduling'
+          ]
+        },
+        {
+          category: 'Platform Management',
+          items: [
+            'Facebook Management',
+            'Instagram Management',
+            'LinkedIn Management',
+            'TikTok Management',
+            'YouTube Management'
+          ]
+        },
+        {
+          category: 'Community Management',
+          items: [
+            'Comment Management',
+            'Message Management',
+            'Audience Engagement',
+            'Customer Interaction',
+            'Community Building'
+          ]
+        },
+        {
+          category: 'Content Publishing',
+          items: [
+            'Multi-Platform Scheduling',
+            'Daily Posting',
+            'Weekly Posting',
+            'Platform Optimization',
+            'Publishing Management'
+          ]
+        },
+        {
+          category: 'Analytics & Reporting',
+          items: [
+            'Performance Analytics',
+            'Monthly Reports',
+            'Audience Insights',
+            'Reach & Engagement Analysis',
+            'Competitor Monitoring',
+            'KPI Tracking'
+          ]
+        },
+        {
+          category: 'Social Media Audits',
+          items: [
+            'Profile Audit',
+            'Brand Consistency Audit',
+            'Content Performance Audit',
+            'Competitor Audit',
+            'Growth Recommendations'
+          ]
+        }
+      ]
     },
     {
       title: 'Branding',
-      description: 'Cohesive brand identities, visual style guides, and communication strategies that make your business unforgettable.',
+      description: 'Cohesive brand identities, logo design, visual style guides, and communication strategies that make your business unforgettable.',
       icon: Sparkles,
       features: [
         'Logo & Visual Identity Design',
-        'Brand Positioning',
-        'Style Guides & Typographies',
-        'Communication Strategies',
-        'Brand Voice Development',
-        'Competitive Analysis'
+        'Brand Strategy & Positioning',
+        'Brand Guidelines & Style Guides',
+        'Tone of Voice & Messaging',
+        'Business Collateral Assets',
+        'Brand Research & Analysis'
       ],
       benefit: 'Establish a distinct market presence that builds instant trust and authority.',
-      popupDescription: 'Brand identity, visual branding, brand positioning, and communication strategies that make your business memorable.'
+      popupDescription: 'We craft comprehensive branding frameworks that shape how the world perceives and trusts your brand.',
+      deliverables: [
+        {
+          category: 'Brand Identity',
+          items: [
+            'Logo Design',
+            'Logo Redesign',
+            'Visual Identity Design',
+            'Brand Identity System',
+            'Brand Refresh'
+          ]
+        },
+        {
+          category: 'Brand Strategy',
+          items: [
+            'Brand Positioning',
+            'Brand Strategy Development',
+            'Market Positioning',
+            'Value Proposition',
+            'Target Audience Research'
+          ]
+        },
+        {
+          category: 'Brand Guidelines',
+          items: [
+            'Brand Style Guide',
+            'Color Palette',
+            'Typography Guidelines',
+            'Logo Usage Guidelines',
+            'Visual Standards'
+          ]
+        },
+        {
+          category: 'Brand Communication',
+          items: [
+            'Brand Voice Development',
+            'Messaging Framework',
+            'Communication Strategy',
+            'Tone of Voice',
+            'Brand Story'
+          ]
+        },
+        {
+          category: 'Marketing Assets',
+          items: [
+            'Business Card Design',
+            'Letterhead Design',
+            'Email Signature Design',
+            'Company Profile Design',
+            'Presentation Design',
+            'Brochure Design',
+            'Flyer Design',
+            'Poster Design',
+            'Social Media Templates'
+          ]
+        },
+        {
+          category: 'Brand Research',
+          items: [
+            'Competitive Analysis',
+            'Industry Research',
+            'Brand Audit',
+            'Market Research',
+            'SWOT Analysis'
+          ]
+        }
+      ]
     }
   ];
 
@@ -93,7 +266,7 @@ export default function Services() {
         </div>
 
         {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
           {serviceList.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -121,7 +294,7 @@ export default function Services() {
                   </p>
 
                   {/* Feature Bullets */}
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
+                  <ul className="grid grid-cols-1 gap-2.5 mb-8">
                     {service.features.map((feature, fIndex) => (
                       <li key={fIndex} className="flex items-start gap-2 text-xs text-slate-400">
                         <CheckCircle2 className="h-4 w-4 text-brand-orange/80 flex-shrink-0 mt-0.5" />
@@ -151,7 +324,37 @@ export default function Services() {
         title={activeService?.title}
         description={activeService?.popupDescription}
         icon={activeService?.icon}
-      />
+        size="lg"
+      >
+        {activeService?.deliverables && (
+          <div className="w-full mt-6">
+            <h4 className="text-xs font-bold text-brand-orange uppercase tracking-wider mb-4 pb-2 border-b border-brand-navy-border/40">
+              What We Actually Deliver:
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {activeService.deliverables.map((del, dIndex) => (
+                <div 
+                  key={dIndex} 
+                  className="p-5 rounded-2xl glass-panel hover:border-brand-orange/20 transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-brand-orange to-yellow-500" />
+                  <h5 className="text-base font-bold text-white mb-3 pl-2 flex items-center gap-1.5">
+                    {del.category}
+                  </h5>
+                  <ul className="flex flex-col gap-2 pl-2">
+                    {del.items.map((item, iIndex) => (
+                      <li key={iIndex} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-brand-orange/80 flex-shrink-0 mt-0.5 animate-pulse" />
+                        <span className="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </Modal>
     </section>
   );
 }

@@ -79,7 +79,7 @@ export default function Contact() {
       const text = `New Contact Request\n\nName: ${formState.name}\nEmail: ${formState.email}\nPhone: ${formState.phone}\nService: ${formState.service}\n\nMessage:\n${formState.message}`;
       
       const encodedText = encodeURIComponent(text);
-      const whatsappNumber = '94705666420';
+      const whatsappNumber = '94769315130';
       const url = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
       // Show submitting state briefly for better UX, then open WhatsApp
@@ -144,7 +144,7 @@ export default function Contact() {
               <div className="flex flex-col gap-4 mb-8">
                 {/* WhatsApp Chat link */}
                 <a
-                  href="https://wa.me/94705666420?text=Hi%20SparkPlow,%20I%20would%20like%20to%20know%20more%20about%20your%20services!"
+                  href="https://wa.me/94769315130?text=Hi%20SparkPlow,%20I%20would%20like%20to%20know%20more%20about%20your%20services!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 rounded-xl glass-panel border-brand-navy-border/40 hover:border-brand-orange/40 transition duration-300 group"
@@ -154,7 +154,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-slate-400">Direct WhatsApp</div>
-                    <div className="text-sm font-bold text-white group-hover:text-brand-orange transition">+94 70 566 6420</div>
+                    <div className="text-sm font-bold text-white group-hover:text-brand-orange transition">+94 76 931 5130</div>
                   </div>
                 </a>
 

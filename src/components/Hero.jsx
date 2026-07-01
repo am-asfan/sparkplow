@@ -128,7 +128,7 @@ export default function Hero() {
 
             {/* Description */}
             <p className="text-slate-300 text-sm sm:text-base md:text-lg font-normal leading-relaxed mb-8 max-w-xl">
-              We help businesses, startups, educational institutions, and personal brands grow through content creation, brand management, and digital marketing.
+              We help businesses, startups, educational institutions, and personal brands grow through content creation, social media management, and branding.
             </p>
 
             {/* CTA Action Buttons */}
