@@ -13,33 +13,23 @@ const navLinks = [
   { name: 'Contact', href: '#contact', id: 'contact' },
 ];
 
-export default function Navbar({ view, onNavigate }) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    if (view === 'works') {
-      setActiveSection('works');
-      const handleScrollScrolledOnly = () => {
-        setScrolled(window.scrollY > 20);
-      };
-      window.addEventListener('scroll', handleScrollScrolledOnly);
-      return () => window.removeEventListener('scroll', handleScrollScrolledOnly);
-    }
-
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Detect active section on scroll (ignoring the works page anchor as it's a separate view)
-      const homeNavLinks = navLinks.filter(link => link.id !== 'works');
-      const sections = homeNavLinks.map(link => document.getElementById(link.id));
+      // Detect active section on scroll
+      const sections = navLinks.map(link => document.getElementById(link.id));
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(homeNavLinks[i].id);
+          setActiveSection(navLinks[i].id);
           break;
         }
       }
@@ -47,22 +37,18 @@ export default function Navbar({ view, onNavigate }) {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [view]);
+  }, []);
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
     const targetId = href.replace('#', '');
-    if (onNavigate) {
-      onNavigate(targetId);
-    } else {
-      const element = document.getElementById(targetId);
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - 80,
-          behavior: 'smooth',
-        });
-      }
+    const element = document.getElementById(targetId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth',
+      });
     }
   };
 

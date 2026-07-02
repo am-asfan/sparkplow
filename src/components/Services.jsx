@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Palette, CalendarRange, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Palette, CalendarRange, Sparkles, CheckCircle2, ArrowRight } from 'lucide-react';
 import Modal from './Modal';
 
 export default function Services() {
@@ -304,10 +304,12 @@ export default function Services() {
                   </ul>
                 </div>
 
-                {/* Key Benefit Section */}
-                <div className="mt-auto pt-4 border-t border-brand-navy-border/40 bg-brand-navy-deep/40 rounded-xl p-4 flex flex-col gap-1 border border-brand-navy-border/20">
-                  <span className="text-[10px] font-bold text-brand-orange uppercase tracking-wider">Key Benefit:</span>
-                  <span className="text-xs text-slate-300 font-medium leading-relaxed">{service.benefit}</span>
+                {/* More Details Clickable Button */}
+                <div className="mt-auto pt-4 border-t border-brand-navy-border/30 flex items-center justify-between">
+                  <span className="text-xs text-slate-400 font-medium">Explore deliverables</span>
+                  <span className="text-xs font-bold text-brand-orange group-hover:translate-x-1.5 transition-transform duration-300 flex items-center gap-1">
+                    More Details <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
                 </div>
 
               </div>

@@ -29,21 +29,17 @@ const InstagramIcon = ({ className }) => (
   </svg>
 );
 
-export default function Footer({ onNavigate }) {
+export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
-    if (onNavigate) {
-      onNavigate(targetId);
-    } else {
-      const element = document.getElementById(targetId);
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - 80,
-          behavior: 'smooth',
-        });
-      }
+    const element = document.getElementById(targetId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth',
+      });
     }
   };
 
