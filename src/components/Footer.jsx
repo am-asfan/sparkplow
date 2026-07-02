@@ -29,17 +29,21 @@ const InstagramIcon = ({ className }) => (
   </svg>
 );
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
   const currentYear = new Date().getFullYear();
 
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth',
-      });
+    if (onNavigate) {
+      onNavigate(targetId);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 
@@ -68,6 +72,7 @@ export default function Footer() {
             <a href="#home" onClick={(e) => handleScrollTo(e, 'home')} className="hover:text-brand-orange transition">Home</a>
             <a href="#about" onClick={(e) => handleScrollTo(e, 'about')} className="hover:text-brand-orange transition">About</a>
             <a href="#services" onClick={(e) => handleScrollTo(e, 'services')} className="hover:text-brand-orange transition">Services</a>
+            <a href="#works" onClick={(e) => handleScrollTo(e, 'works')} className="hover:text-brand-orange transition">Our Works</a>
             <a href="#who-we-serve" onClick={(e) => handleScrollTo(e, 'who-we-serve')} className="hover:text-brand-orange transition">Who We Serve</a>
             <a href="#why-choose-us" onClick={(e) => handleScrollTo(e, 'why-choose-us')} className="hover:text-brand-orange transition">Why Us</a>
             <a href="#process" onClick={(e) => handleScrollTo(e, 'process')} className="hover:text-brand-orange transition">Process</a>

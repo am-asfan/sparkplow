@@ -6,29 +6,40 @@ const navLinks = [
   { name: 'Home', href: '#home', id: 'home' },
   { name: 'About', href: '#about', id: 'about' },
   { name: 'Services', href: '#services', id: 'services' },
+  { name: 'Our Works', href: '#works', id: 'works' },
   { name: 'Who We Serve', href: '#who-we-serve', id: 'who-we-serve' },
   { name: 'Why Us', href: '#why-choose-us', id: 'why-choose-us' },
   { name: 'Process', href: '#process', id: 'process' },
   { name: 'Contact', href: '#contact', id: 'contact' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ view, onNavigate }) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    if (view === 'works') {
+      setActiveSection('works');
+      const handleScrollScrolledOnly = () => {
+        setScrolled(window.scrollY > 20);
+      };
+      window.addEventListener('scroll', handleScrollScrolledOnly);
+      return () => window.removeEventListener('scroll', handleScrollScrolledOnly);
+    }
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Detect active section on scroll
-      const sections = navLinks.map(link => document.getElementById(link.id));
+      // Detect active section on scroll (ignoring the works page anchor as it's a separate view)
+      const homeNavLinks = navLinks.filter(link => link.id !== 'works');
+      const sections = homeNavLinks.map(link => document.getElementById(link.id));
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navLinks[i].id);
+          setActiveSection(homeNavLinks[i].id);
           break;
         }
       }
@@ -36,18 +47,22 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [view]);
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
     const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth',
-      });
+    if (onNavigate) {
+      onNavigate(targetId);
+    } else {
+      const element = document.getElementById(targetId);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth',
+        });
+      }
     }
   };
 
