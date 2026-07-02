@@ -101,37 +101,37 @@ export default function ClientsAndWorks() {
         </div>
 
         {/* Dynamic Partner Grid (Side-by-side flex layout) */}
-        <div className="flex flex-wrap justify-center items-center gap-6 mb-12 animate-scale-in">
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-12 animate-scale-in">
           
           {clientsList.map(client => (
             <div
               key={client.id}
               onClick={() => handleClientToggle(client.id)}
-              className={`glass-panel w-64 h-64 rounded-3xl flex flex-col items-center justify-center p-6 transition-all duration-300 cursor-pointer relative ${
+              className={`glass-panel w-36 h-36 rounded-2xl flex flex-col items-center justify-center p-3 transition-all duration-300 cursor-pointer relative ${
                 selectedClient === client.id 
                   ? 'border-brand-orange bg-brand-navy-card/90 shadow-[0_0_20px_rgba(255,87,34,0.15)] scale-[1.02]'
                   : 'border-brand-navy-border/60 bg-brand-navy-card/45 hover:border-brand-orange/45 hover:bg-brand-navy-card/75'
               }`}
             >
               {/* Logo wrapper */}
-              <div className="w-full flex items-center justify-center flex-grow bg-white rounded-2xl p-4 shadow-sm overflow-hidden">
-                <img src={client.logo} alt={`${client.name} Logo`} className="h-16 w-auto object-contain" />
+              <div className="w-full h-16 flex items-center justify-center bg-white rounded-xl p-2 shadow-sm overflow-hidden">
+                <img src={client.logo} alt={`${client.name} Logo`} className="h-7 w-auto object-contain" />
               </div>
               
               {/* Partner Name & Tag */}
-              <span className={`text-xs font-bold tracking-wide mt-3 block ${
+              <span className={`text-[10px] font-bold tracking-wide mt-1.5 block ${
                 selectedClient === client.id ? 'text-brand-orange' : 'text-slate-300'
               }`}>
                 {client.name}
               </span>
-              <span className="text-[10px] text-slate-500 mt-1 uppercase font-semibold text-center max-w-[200px] truncate">
+              <span className="text-[8px] text-slate-500 mt-0.5 uppercase font-semibold text-center max-w-[120px] truncate">
                 {client.service}
               </span>
 
               {/* Active Indicator dot */}
-              <span className="absolute top-4 right-4 flex h-2 w-2">
+              <span className="absolute top-2 right-2 flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
               </span>
             </div>
           ))}
@@ -139,11 +139,11 @@ export default function ClientsAndWorks() {
           {/* Become Partner CTA Card */}
           <div
             onClick={handleScrollToContact}
-            className="glass-panel w-64 h-64 rounded-3xl flex flex-col items-center justify-center p-6 border-dashed border-brand-navy-border/80 bg-transparent hover:border-brand-orange/60 hover:bg-brand-navy-card/20 transition-all duration-300 cursor-pointer text-slate-500 hover:text-brand-orange group"
+            className="glass-panel w-36 h-36 rounded-2xl flex flex-col items-center justify-center p-3 border-dashed border-brand-navy-border/80 bg-transparent hover:border-brand-orange/60 hover:bg-brand-navy-card/20 transition-all duration-300 cursor-pointer text-slate-500 hover:text-brand-orange group"
           >
-            <Briefcase className="h-8 w-8 mb-3 text-slate-600 group-hover:text-brand-orange transition-colors" />
-            <span className="text-xs font-black tracking-widest uppercase text-slate-400 group-hover:text-white">Your Logo</span>
-            <span className="text-[10px] text-slate-500 mt-1 group-hover:text-brand-orange">Let's grow together</span>
+            <Briefcase className="h-5 w-5 mb-1.5 text-slate-600 group-hover:text-brand-orange transition-colors" />
+            <span className="text-[10px] font-black tracking-widest uppercase text-slate-400 group-hover:text-white">Your Logo</span>
+            <span className="text-[8px] text-slate-500 mt-0.5 group-hover:text-brand-orange">Let's grow together</span>
           </div>
 
         </div>
