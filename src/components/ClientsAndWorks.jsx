@@ -94,10 +94,7 @@ export default function ClientsAndWorks() {
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6 animate-scale-in">
             Featured <span className="text-brand-orange">Partners</span>
           </h1>
-          <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full mb-6" />
-          <p className="inline-block text-base sm:text-lg font-black uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-yellow-500 animate-float-slow">
-            SparkPlow &mdash; From Spark to Success
-          </p>
+          <div className="h-1.5 w-16 bg-brand-orange mx-auto rounded-full" />
         </div>
 
         {/* Dynamic Partner Grid (Side-by-side flex layout) */}
