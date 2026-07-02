@@ -107,26 +107,13 @@ export default function ClientsAndWorks() {
             <div
               key={client.id}
               onClick={() => handleClientToggle(client.id)}
-              className={`glass-panel w-36 h-36 rounded-2xl flex flex-col items-center justify-center p-3 transition-all duration-300 cursor-pointer relative ${
+              className={`w-24 h-24 rounded-2xl flex items-center justify-center p-3.5 transition-all duration-300 cursor-pointer relative bg-white shadow-sm border ${
                 selectedClient === client.id 
-                  ? 'border-brand-orange bg-brand-navy-card/90 shadow-[0_0_20px_rgba(255,87,34,0.15)] scale-[1.02]'
-                  : 'border-brand-navy-border/60 bg-brand-navy-card/45 hover:border-brand-orange/45 hover:bg-brand-navy-card/75'
+                  ? 'border-brand-orange shadow-[0_0_15px_rgba(255,87,34,0.2)] scale-[1.03] ring-2 ring-brand-orange/60'
+                  : 'border-slate-100 hover:border-brand-orange/40 hover:scale-[1.01]'
               }`}
             >
-              {/* Logo wrapper */}
-              <div className="w-full h-16 flex items-center justify-center bg-white rounded-xl p-2 shadow-sm overflow-hidden">
-                <img src={client.logo} alt={`${client.name} Logo`} className="h-7 w-auto object-contain" />
-              </div>
-              
-              {/* Partner Name & Tag */}
-              <span className={`text-[10px] font-bold tracking-wide mt-1.5 block ${
-                selectedClient === client.id ? 'text-brand-orange' : 'text-slate-300'
-              }`}>
-                {client.name}
-              </span>
-              <span className="text-[8px] text-slate-500 mt-0.5 uppercase font-semibold text-center max-w-[120px] truncate">
-                {client.service}
-              </span>
+              <img src={client.logo} alt={`${client.name} Logo`} className="h-full w-full object-contain" />
 
               {/* Active Indicator dot */}
               <span className="absolute top-2 right-2 flex h-1.5 w-1.5">
@@ -139,11 +126,10 @@ export default function ClientsAndWorks() {
           {/* Become Partner CTA Card */}
           <div
             onClick={handleScrollToContact}
-            className="glass-panel w-36 h-36 rounded-2xl flex flex-col items-center justify-center p-3 border-dashed border-brand-navy-border/80 bg-transparent hover:border-brand-orange/60 hover:bg-brand-navy-card/20 transition-all duration-300 cursor-pointer text-slate-500 hover:text-brand-orange group"
+            className="w-24 h-24 rounded-2xl flex flex-col items-center justify-center p-3 border-2 border-dashed border-brand-navy-border/60 bg-transparent hover:border-brand-orange/60 transition-all duration-300 cursor-pointer text-slate-500 hover:text-brand-orange group"
           >
-            <Briefcase className="h-5 w-5 mb-1.5 text-slate-600 group-hover:text-brand-orange transition-colors" />
-            <span className="text-[10px] font-black tracking-widest uppercase text-slate-400 group-hover:text-white">Your Logo</span>
-            <span className="text-[8px] text-slate-500 mt-0.5 group-hover:text-brand-orange">Let's grow together</span>
+            <Briefcase className="h-5 w-5 mb-1 text-slate-500 group-hover:text-brand-orange transition-colors" />
+            <span className="text-[8px] font-black uppercase tracking-widest text-slate-500 group-hover:text-white">Your Logo</span>
           </div>
 
         </div>
